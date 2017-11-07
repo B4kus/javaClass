@@ -12,6 +12,7 @@ public class WektorMain {
         obj.dodawanie(obj2);
         obj.odejmowanie(obj2);
         obj.mnozenie(obj2);
+        obj.iloczynSkalarany(obj2);
 
 
     }
@@ -57,7 +58,13 @@ class Wektor{
         wynikZ = (this.wektorX * obj2.wektorY) - (this.wektorY * obj2.wektorX);
         System.out.println("Nowe wspolrzedne wektora to: [" + wynikX + ";" + wynikY + ";"+ wynikZ + "]" );
 
+    }
 
+    void iloczynSkalarany(Wektor obj2){
+        int wynik;
+
+        wynik = this.wektorX * obj2.wektorX + this.wektorY * obj2.wektorY + this.wektorZ * obj2.wektorZ;
+        System.out.println("Iloczyn skalary wektorow to: " + wynik);
 
     }
 
