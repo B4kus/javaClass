@@ -6,12 +6,15 @@ public class UlamekZajecia {
     {
         Ulamek obj, obj2, obj3;
 
-        obj = new Ulamek(6,8);
+        obj = new Ulamek(8,5);
         obj2 = new Ulamek(3,7);
         obj3 = new Ulamek(3,2);
         obj.dodawanie(obj2);
         obj.odejmowanie(obj2);
         obj.mnozenie(obj2);
+
+        double wynikDziesietny = obj.rozDziesietne();
+        System.out.println("Rozwiniecie dziesietne ulamka to: " + wynikDziesietny);
 
 
     }
@@ -65,7 +68,17 @@ class Ulamek
 
     }
 
+    double rozDziesietne(){
+        double wynik;
+        double nowyMianownik = (double) mianownik;
+        wynik = licznik / nowyMianownik;
 
+        return wynik;
+
+
+
+
+    }
 
 
 
