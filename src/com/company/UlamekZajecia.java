@@ -9,6 +9,7 @@ public class UlamekZajecia {
         obj = new Ulamek(6,8);
         obj2 = new Ulamek(3,7);
         obj.dodawanie(obj2);
+        obj.odejmowanie(obj2);
 
 
 
@@ -43,6 +44,21 @@ class Ulamek
             System.out.println("Wynik dodawania ułamków to:" + " " + wynikLicznik + " " + wynikMianownik);
         }
     }
+    void odejmowanie(Ulamek obj2){
+        int wynikLicznika, wynikMianownika;
+        if (this.mianownik == obj2.mianownik){
+            wynikLicznika = this.licznik - obj2.licznik;
+            wynikMianownika = this.mianownik;
+            System.out.println("Wynik dodawania ułamków to:" + " " +  wynikLicznika + " " + wynikMianownika);
+        }else{
+            wynikLicznika = (this.licznik * obj2.mianownik) - (this.mianownik * obj2.licznik);
+            wynikMianownika = this.mianownik * obj2.mianownik;
+            System.out.println("Wynik dodawania ułamków to:" + " " + wynikLicznika + " " + wynikMianownika);
+        }
+
+
+    }
+
 
 
 
