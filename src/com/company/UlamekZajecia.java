@@ -13,11 +13,11 @@ public class UlamekZajecia {
         obj.odejmowanie(obj2);
         obj.mnozenie(obj2);
         obj.odwroc();
+        obj.skroc();
 
 
         double wynikDziesietny = obj.rozDziesietne();
         System.out.println("Rozwiniecie dziesietne ulamka to: " + wynikDziesietny);
-
 
 
     }
@@ -107,5 +107,18 @@ class Ulamek {
         return licznik;
     }
 
+
+    void skroc() {
+        int wynikLicznika, wynikMianownika;
+        wynikLicznika = licznik / nwd();
+        wynikMianownika = mianownik / nwd();
+        if(wynikMianownika == 1){
+            System.out.println("Ulamek po skruceniu ma postac " + " " + wynikLicznika);
+
+
+        }else {
+            System.out.println("Ulamek po skruceniu ma postac " + " " + wynikLicznika + " " + wynikMianownika);
+        }
+    }
 
 }
