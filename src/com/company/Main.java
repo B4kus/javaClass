@@ -44,8 +44,8 @@ public class Main {
         double obwodOkregu = obj4.obwodOkregu();
         System.out.println("Obwod okregu: " + obwodOkregu);
 
-        //void przesunPunkt = obj3.przesun(3,5);
-        //System.out.println("Przesun: " + przesunPunkt);
+        //void przesun = obj3.przesun(3,5);
+        //System.out.println("Przesun: " + przesun);
 
         boolean zawieraProstokat = obj2.zawiera(obj3);
         System.out.println("Test " + zawieraProstokat);
@@ -71,6 +71,12 @@ class Prostokat
     double szerokosc;
     Punkt wierzcholekProstkata;
 
+    /**
+     * Metoda inicjalizacja metody
+     *
+     * @param dlugosc dlugość boku
+     * @param szerokosc szerokość boku
+     */
     Prostokat(double dlugosc,double szerokosc)
     {
         this.dlugosc = dlugosc;
@@ -78,24 +84,37 @@ class Prostokat
         this.wierzcholekProstkata = new Punkt(0,0);
     }
 
+
     Prostokat(double dlugosc, double szerokosc, Punkt wierzcholekProstkata)
     {
 
         this.dlugosc = dlugosc;
-        this.szerokosc = dlugosc;
+        this.szerokosc = szerokosc;
         this.wierzcholekProstkata = wierzcholekProstkata;
 
     }
 
+    /**
+     * Metoda liczy pole prostokąta
+     *
+     * @return
+     */
     double poleProstokata()
+
     {
 
         return dlugosc * szerokosc;
 
     }
 
-
+    /**
+     * Metoda liczby obwód prostokąta
+     *
+     *
+     * @return
+     */
     double obwodProstokata()
+
     {
 
         return 2 * dlugosc + 2 * szerokosc;
@@ -109,6 +128,11 @@ class Prostokat
 
     }
 
+    /**
+     * Metoda  wykonuje przesunięcie punków wierzchołka*
+     * @param dx wartość x przesunięcia
+     * @param dy wartość y przesunięcia
+     */
     void przesun (double dx, double dy)
     {
 
@@ -116,7 +140,14 @@ class Prostokat
 
     }
 
+    /**
+     * Metoda sprawdza czy punkt zawiera się w prostokącie
+     *
+     * @param obj1 dane nowego punktu
+     * @return ture or false
+     */
     boolean zawiera(Punkt obj1)
+
     {
         return (this.wierzcholekProstkata.punktX <= obj1.punktX  && this.wierzcholekProstkata.punktX >= obj1.punktX) &&
                 (this.wierzcholekProstkata.punktY <= obj1.punktY && this.wierzcholekProstkata.punktY >= obj1.punktY);
@@ -136,6 +167,12 @@ class Punkt
     double punktX;
     double punktY;
 
+    /**
+     * Metoda inicjalizacji punktu
+     *
+     * @param punktX wartości współrzędnych x
+     * @param punktY wartości współrzędnych y
+     */
     Punkt(double punktX, double punktY)
     {
 
@@ -150,6 +187,12 @@ class Punkt
         return "[x: "+punktX+", y: "+punktY+"]";
 
     }
+
+    /**
+     * Metoda podająca paramety do przesunięcia
+     * @param dx wartość przesunięcia x
+     * @param dy wartośc przesunięcia y
+     */
 
     void przesun(double dx, double dy)
     {
@@ -180,12 +223,26 @@ class Okrag
 
     }
 
+    /**
+     * Metoda liczby pole okręgu
+     *
+     *
+     * @return
+     */
+
     double poleOkregu()
     {
 
         return promien * promien * Math.PI;
 
     }
+
+    /**
+     * Metoda liczby obwód okregu
+     *
+     *
+     * @return
+     */
 
     double obwodOkregu()
     {
@@ -201,6 +258,13 @@ class Okrag
 
     }
 
+    /**
+     * Metoda zwraca czy punkt zawiera się w okręgu
+     *
+     * @param obj1 wartości punktu
+     * @return true or false
+     */
+
     boolean zawiera(Punkt obj1)
     {
 
@@ -210,7 +274,12 @@ class Okrag
     }
 
 
-
+    /**
+     * Metoda sprawdza czy dwa okręgi się przecinają
+     *
+     * @param obj5 dane nowego okręgu
+     * @return true or false
+     */
     boolean przecina(Okrag obj5)
     {
         double odlegloscX = Math.pow(this.srodekOkregu.punktX - obj5.srodekOkregu.punktX,2);
