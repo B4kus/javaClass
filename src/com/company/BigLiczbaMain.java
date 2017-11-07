@@ -5,8 +5,9 @@ public class BigLiczbaMain {
     public static void main(String[] args) {
     BigLiczba obj;
 
-    obj = new BigLiczba(21312);
+    obj = new BigLiczba(342242423);
     obj.testPodzielnosci(4);
+    obj.czyLiczbaJestPierwsza();
 
 
     }
@@ -35,7 +36,22 @@ class BigLiczba{
 
     }
 
+    void czyLiczbaJestPierwsza(){
+        if (this.liczba < 2 ){
+            System.out.println("Liczba nie jest pierwsza");
 
 
+        }else{
+            for(int i = 2 ; i * i <= this.liczba;){
+                if(this.liczba % i == 0){
+                    System.out.println("False");
+                    return;
+                }
+                System.out.println("True");
+                return;
+            }
+        }
+
+    }
 
 }
