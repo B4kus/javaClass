@@ -8,6 +8,7 @@ public class UlamekZajecia {
 
         obj = new Ulamek(6,8);
         obj2 = new Ulamek(3,7);
+        obj3 = new Ulamek(3,2);
         obj.dodawanie(obj2);
         obj.odejmowanie(obj2);
         obj.mnozenie(obj2);
