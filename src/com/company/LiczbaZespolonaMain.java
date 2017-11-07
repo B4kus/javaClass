@@ -9,10 +9,8 @@ public class LiczbaZespolonaMain {
 
         obj = new LiczbaZespolona(2,5);
         obj2 = new LiczbaZespolona(5,1);
-
-
-
-
+        obj.dodawanie(obj2);
+        obj.odejmownaie(obj2);
 
     }
 }
@@ -50,7 +48,13 @@ class LiczbaZespolona{
         System.out.println("Nowa para liczb to: " + wynikRzecz + " " + wynikUro );
 
     }
+    void odejmownaie(LiczbaZespolona obj2){
+        int wynikRecz, wynikUro;
+        wynikRecz = this.liczbaRzeczy - obj2.liczbaRzeczy;
+        wynikUro = this.liczbaUro = obj2.liczbaUro;
+        System.out.println("Nowa para liczb to: " + wynikRecz + " " + wynikUro );
 
+    }
 
 
 }
