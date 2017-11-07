@@ -10,10 +10,7 @@ public class UlamekZajecia {
         obj2 = new Ulamek(3,7);
         obj.dodawanie(obj2);
         obj.odejmowanie(obj2);
-
-
-
-
+        obj.mnozenie(obj2);
 
 
     }
@@ -56,6 +53,14 @@ class Ulamek
             System.out.println("Wynik dodawania ułamków to:" + " " + wynikLicznika + " " + wynikMianownika);
         }
 
+
+    }
+
+    void mnozenie(Ulamek obj2){
+        int wynikLicznika, wynikMianownika;
+        wynikLicznika = this.licznik * obj2.licznik;
+        wynikMianownika = this.mianownik * obj2.mianownik;
+        System.out.println("Wynik mnożenia ułamków to:" + " " +  wynikLicznika + " " + wynikMianownika);
 
     }
 
