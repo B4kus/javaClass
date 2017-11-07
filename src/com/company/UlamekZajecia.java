@@ -12,7 +12,7 @@ public class UlamekZajecia {
         obj.dodawanie(obj2);
         obj.odejmowanie(obj2);
         obj.mnozenie(obj2);
-
+        obj.odwroc();
 
         double wynikDziesietny = obj.rozDziesietne();
         System.out.println("Rozwiniecie dziesietne ulamka to: " + wynikDziesietny);
