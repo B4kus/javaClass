@@ -12,6 +12,7 @@ public class UlamekZajecia {
         obj.dodawanie(obj2);
         obj.odejmowanie(obj2);
         obj.mnozenie(obj2);
+        obj.odwroc();
 
         double wynikDziesietny = obj.rozDziesietne();
         System.out.println("Rozwiniecie dziesietne ulamka to: " + wynikDziesietny);
@@ -79,7 +80,15 @@ class Ulamek
 
 
     }
+    void odwroc(){
 
+      int odwLicznik, odwMianownik;
+      odwLicznik = mianownik;
+      odwMianownik = licznik;
+      System.out.println("Odwrotnosc ulamka to:" + " " + odwLicznik + " "+ odwMianownik);
+
+
+    }
 
 
 
