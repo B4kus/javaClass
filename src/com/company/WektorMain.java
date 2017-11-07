@@ -10,6 +10,7 @@ public class WektorMain {
         obj2 = new Wektor(1,6,2);
 
         obj.dodawanie(obj2);
+        obj.odejmowanie(obj2);
 
 
     }
@@ -38,6 +39,14 @@ class Wektor{
         System.out.println("Nowe wspolrzedne wektora to: [" + wynikX + ";" + wynikY + ";"+ wynikZ + "]" );
 
 
+    }
+
+    void odejmowanie(Wektor obj2){
+        int wynikX , wynikY, wynikZ;
+        wynikX = this.wektorX - obj2.wektorX;
+        wynikY = this.wektorY - obj2.wektorY;
+        wynikZ = this.wektorZ - obj2.wektorZ;
+        System.out.println("Nowe wspolrzedne wektora to: [" + wynikX + ";" + wynikY + ";"+ wynikZ + "]" );
 
     }
 
