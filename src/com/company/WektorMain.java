@@ -13,6 +13,7 @@ public class WektorMain {
         obj.odejmowanie(obj2);
         obj.mnozenie(obj2);
         obj.iloczynSkalarany(obj2);
+        obj.mnozeniePrzezN(2);
 
 
     }
@@ -65,6 +66,13 @@ class Wektor{
 
         wynik = this.wektorX * obj2.wektorX + this.wektorY * obj2.wektorY + this.wektorZ * obj2.wektorZ;
         System.out.println("Iloczyn skalary wektorow to: " + wynik);
+    }
+    void mnozeniePrzezN(int n){
+        int wynikX , wynikY, wynikZ;
+        wynikX = this.wektorX * n;
+        wynikY = this.wektorY * n;
+        wynikZ = this.wektorZ * n;
+        System.out.println("Nowe wspolrzedne wektora to: [" + wynikX + ";" + wynikY + ";"+ wynikZ + "]" );
 
     }
 
