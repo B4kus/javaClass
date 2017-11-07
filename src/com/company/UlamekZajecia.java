@@ -32,7 +32,6 @@ class Ulamek {
         this.licznik = licznik;
         this.mianownik = mianownik;
 
-
     }
 
     void dodawanie(Ulamek obj2) {
