@@ -1,4 +1,5 @@
 package com.company;
+import java.math.*;
 
 public class WektorMain {
 
@@ -14,6 +15,7 @@ public class WektorMain {
         obj.mnozenie(obj2);
         obj.iloczynSkalarany(obj2);
         obj.mnozeniePrzezN(2);
+        obj.dlugoscWektora();
 
 
     }
@@ -76,4 +78,11 @@ class Wektor{
 
     }
 
+    void dlugoscWektora(){
+        double wynik;
+        wynik = (this.wektorX * this.wektorX + this.wektorY * wektorY + this.wektorZ * this.wektorZ);
+        System.out.println("Dlugosc wektora to: " + Math.sqrt(wynik));
+
+
+    }
 }
