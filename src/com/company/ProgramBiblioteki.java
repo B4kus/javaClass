@@ -1,10 +1,15 @@
 package com.company;
 
 import java.awt.Rectangle;
+import java.io.*;
+import java.util.Objects;
 
 public class ProgramBiblioteki {
+    static double kursDolara = 3.63;
+    static double kursEuro = 4.23;
+    static double kursFunta = 4.77;
 
-    public static void main(String[] args){
+    public static void main(String[] args) throws IOException {
 
         Rectangle obj = new Rectangle(0,0,4,3);
         Rectangle obj2 = new Rectangle(1,1,4,3);
@@ -31,5 +36,67 @@ public class ProgramBiblioteki {
         System.out.println("Czy prostkat zawiera sie w prostkacie: " + zawieraDwa);
 
 
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        System.out.println("Wpisz Dolar aby przeliczyc dolary na zlotowki.");
+        System.out.println("Wpisz Euro aby przeliczyc euro na zlotowki.");
+        System.out.println("Wpisz Funt aby przeliczyc funty na zlotowki.");
+        System.out.print("Podaj rodzaj waluty: ");
+
+        try {
+            String str1 = br.readLine();
+
+            if (Objects.equals(str1, "Dolar")) {
+
+
+                BufferedReader br2 = new BufferedReader(new InputStreamReader(System.in));
+
+                try {
+
+                    System.out.print("USD: ");
+                    String str = br2.readLine();
+                    double x = Double.parseDouble(str);
+                    System.out.println("PLN: " + x * kursDolara);
+                } catch (IOException e1) {
+                    System.out.println("wyjatek operacji wejscia/wyjscia");
+                } catch (NumberFormatException e2) {
+                    System.out.println("nieprawidlowy format liczby");
+                }
+
+            } else if (Objects.equals(str1, "Euro")) {
+                BufferedReader br2 = new BufferedReader(new InputStreamReader(System.in));
+
+                try {
+
+                    System.out.print("EUR: ");
+                    String str = br2.readLine();
+                    double x = Double.parseDouble(str);
+                    System.out.println("PLN: " + x * kursEuro);
+                } catch (IOException e1) {
+                    System.out.println("wyjatek operacji wejscia/wyjscia");
+                } catch (NumberFormatException e2) {
+                    System.out.println("nieprawidlowy format liczby");
+                }
+
+
+            } else if (Objects.equals(str1, "Funt")) {
+                BufferedReader br2 = new BufferedReader(new InputStreamReader(System.in));
+
+                try {
+
+                    System.out.print("GPB: ");
+                    String str = br2.readLine();
+                    double x = Double.parseDouble(str);
+                    System.out.println("PLN: " + x * kursFunta);
+                } catch (IOException e1) {
+                    System.out.println("wyjatek operacji wejscia/wyjscia");
+                } catch (NumberFormatException e2) {
+                    System.out.println("nieprawidlowy format liczby");
+                }
+            }
+        }catch (IOException e1) {
+            System.out.println("wyjatek operacji wejscia/wyjscia");
+        } catch (NumberFormatException e2) {
+            System.out.println("nieprawidlowy format danych");
+        }
     }
 }
