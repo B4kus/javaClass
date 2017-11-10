@@ -1,8 +1,11 @@
 package com.company;
+import java.io.FilterOutputStream;
+import java.io.PrintStream;
 import java.math.*;
 
 import static java.lang.Math.max;
 import static java.lang.Math.sqrt;
+import java.io.FilterOutputStream.*;
 
 public class Main {
 
@@ -44,8 +47,8 @@ public class Main {
         double obwodOkregu = obj4.obwodOkregu();
         System.out.println("Obwod okregu: " + obwodOkregu);
 
-        //void przesun = obj3.przesun(3,5);
-        //System.out.println("Przesun: " + przesun);
+        obj3.przesun(3,5);
+
 
         boolean zawieraProstokat = obj2.zawiera(obj3);
         System.out.println("Test " + zawieraProstokat);
@@ -137,6 +140,7 @@ class Prostokat
     {
 
         this.wierzcholekProstkata.przesun(dx + wierzcholekProstkata.punktX, dy + wierzcholekProstkata.punktY);
+        System.out.println("Nowe punkty to: " + dx + "," + dy);
 
     }
 
@@ -155,9 +159,13 @@ class Prostokat
 
     }
 
-    //boolean przecina(Prostokat obj6)
-    //{
-   // }
+    boolean przecina(Okrag obj4)
+    {
+        return (this.wierzcholekProstkata.punktX <=obj4.srodekOkregu.punktX && this.wierzcholekProstkata.punktX >= obj4.srodekOkregu.punktX + obj4.promien)
+                && (this.wierzcholekProstkata.punktX <= obj4.srodekOkregu.punktX && this.wierzcholekProstkata.punktY >= obj4.srodekOkregu.punktX + obj4.promien);
+
+
+    }
 
 
 }
@@ -276,7 +284,7 @@ class Okrag
 
     /**
      * Metoda sprawdza czy dwa okręgi się przecinają
-     *
+     *xx
      * @param obj5 dane nowego okręgu
      * @return true or false
      */
@@ -290,3 +298,5 @@ class Okrag
 
     }
 }
+
+
